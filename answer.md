@@ -2,39 +2,8 @@
 Update CHANGELOG.md</br>
 aefead2207ef7e2aa5dc81a34aedf0cad4c32545
 2. tag: v0.12.23
-3. $ git log b8d720 --pretty=format:"%p"</br>
-56cd7859e0 9ea88f22fc</br>
-56cd7859e0</br>
-58dcac4b79 ffbcf55817</br>
-58dcac4b79</br>
-472d958b10</br>
-58ef73814e</br>
-b6a041af2b dae1efe62a</br>
-4e5a18c621</br>
-8b0888798f</br>
-c5300dc46d 6bad4e3dc0</br>
-e184b9edb9 9e5fca67e8</br>
-8ea60ea651</br>
-7471779fca</br>
-d72a192078</br>
-82678ed156</br>
-4d8fde3d6f</br>
-5d3ca8aaf1</br>
-4045a6e5d0</br>
-2a95d98383</br>
-2b2ac1f6de</br>
-948d4d0ecf</br>
-ae407060f0 62aae82913</br>
-413e423bba</br>
-4977120764 98c02ac114</br>
-dc178789b2 e4c4c8cab5</br>
-dc178789b2</br>
-7f8e087ce3</br>
-413e423bba</br>
-413e423bba</br>
-c0176aeab3</br>
-c0176aeab3</br>
-aa8a0f063c
+3. $ git log b8d720 --pretty=format:"%P"</br>
+56cd7859e05c36c06b56d013b55a252d0bb7e158 
 4. $ git log v0.12.23..v0.12.24 --oneline</br>
 33ff1c03bb (tag: v0.12.24) v0.12.24</br>
 b14b74c493 [Website] vmc provider links</br>
