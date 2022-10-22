@@ -21,13 +21,13 @@ bash: /usr/bin/touch: Argument list too long
 -d является true если есть файл или директория
 Ответом будет 0 если директория есть и 1 если ее нет
 
-vagrant@vagrant:~$ mkdir /tmp/new_path_directory/
-vagrant@vagrant:~$ cp /bin/bash /tmp/new_path_directory/
-vagrant@vagrant:~$ export PATH="/tmp/new_path_directory/:$PATH"
-vagrant@vagrant:~$ type -a bash
-bash is /tmp/new_path_directory/bash
-bash is /usr/bin/bash
-bash is /bin/bash
+vagrant@vagrant:~$ mkdir /tmp/new_path_directory/</br>
+vagrant@vagrant:~$ cp /bin/bash /tmp/new_path_directory/</br>
+vagrant@vagrant:~$ export PATH="/tmp/new_path_directory/:$PATH"</br>
+vagrant@vagrant:~$ type -a bash</br>
+bash is /tmp/new_path_directory/bash</br>
+bash is /usr/bin/bash</br>
+bash is /bin/bash</br>
 
 Изначально прописал патч вначале и он оказался в конце списка. Исправил ошибку и удалил ошибочную строку командой ниже
 vagrant@vagrant:~$ export PATH="${PATH%:/tmp/new_path_directory/}"
