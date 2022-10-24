@@ -132,6 +132,7 @@
         33 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
     [1]+  Stopped                 top
 </details>
+
     vagrant@vagrant:~$ bg
     [1]+ top &
     vagrant@vagrant:~$ job -l
