@@ -146,6 +146,7 @@
     1493 pts/0    00:00:00 ps
     vagrant@vagrant:~$ tmux
     [exited]
+    reptyr 1491
     вышел CTRL+C и прописал vagrant ssh заново
     vagrant@vagrant:~$ tmux attach
     no sessions
