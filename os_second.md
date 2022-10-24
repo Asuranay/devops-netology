@@ -39,7 +39,7 @@
 </details>
 
 ### Задание 8 ###
-    bash 6>&2 2>&1 1>&6 | команда
+    ls -l 6>&2 2>&1 1>&6 | команда
 ### Задание 9 ###
      cat /proc/$$/environ
 <details><summary>Вывод команды выше</summary>
@@ -88,17 +88,70 @@
 </details>
 
 ### Задание 13 ###
-    Запустить длительный процесс, например top
-    CTRL-Z
-    bg
-    jobs -l
-    вывод [1]+ 4711 Stopped (signal) top
-    disown top
-    ps -a
-    Запустите выбранный мультиплексор терминала, например tmux
-    Подключиться к фоновому процессу reptyr 4711
-    Отключить мультиплексор терминала и закрыть ssh.
-    Переподключиться к ssh
+    vagrant@vagrant:~$ top
+<details><summary>Вывод команлды top</summary>
+    top - 02:40:13 up 0 min,  1 user,  load average: 0.12, 0.04, 0.01
+    Tasks: 131 total,   1 running, 130 sleeping,   0 stopped,   0 zombie
+    %Cpu(s):  0.1 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+    MiB Mem :   7791.3 total,   7308.1 free,    147.2 used,    336.0 buff/cache
+    MiB Swap:   1953.0 total,   1953.0 free,      0.0 used.   7407.4 avail Mem
+
+        PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+        1 root      20   0  101872  11348   8348 S   0.0   0.1   0:00.66 systemd
+        2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd
+        3 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_gp
+        4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 rcu_par_gp
+        5 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0-events
+        6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-kblockd
+        7 root      20   0       0      0      0 I   0.0   0.0   0:00.02 kworker/0:1-events
+        8 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/u8:0-events_power+
+        9 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 mm_percpu_wq
+        10 root      20   0       0      0      0 S   0.0   0.0   0:00.00 ksoftirqd/0
+        11 root      20   0       0      0      0 I   0.0   0.0   0:00.01 rcu_sched
+        12 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0
+        13 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0
+        14 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0
+        15 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1
+        16 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1
+        17 root      rt   0       0      0      0 S   0.0   0.0   0:00.20 migration/1
+        18 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/1
+        19 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0-events
+        20 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-kblockd
+        21 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/2
+        22 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/2
+        23 root      rt   0       0      0      0 S   0.0   0.0   0:00.20 migration/2
+        24 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/2
+        25 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0-events
+        26 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/2:0H-kblockd
+        27 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/3
+        28 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/3
+        29 root      rt   0       0      0      0 S   0.0   0.0   0:00.20 migration/3
+        30 root      20   0       0      0      0 S   0.0   0.0   0:00.01 ksoftirqd/3
+        31 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0-cgroup_destroy
+        32 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/3:0H-kblockd
+        33 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs
+    [1]+  Stopped                 top
+</details>
+    vagrant@vagrant:~$ bg
+    [1]+ top &
+    vagrant@vagrant:~$ job -l
+    -bash: job: command not found
+    [1]+  Stopped                 top
+    vagrant@vagrant:~$ disown top
+    -bash: warning: deleting stopped job 1 with process group 1491
+    vagrant@vagrant:~$ ps -a
+        PID TTY          TIME CMD
+    1491 pts/0    00:00:00 top
+    1493 pts/0    00:00:00 ps
+    vagrant@vagrant:~$ tmux
+    [exited]
+    вышел CTRL+C и прописал vagrant ssh заново
+    vagrant@vagrant:~$ tmux attach
+    no sessions
+    vagrant@vagrant:~$ ps -a
+    PID TTY          TIME CMD
+    1611 pts/1    00:00:00 ps
+
 ### Задание 14 ###
     tee - считывает стандартный ввод и записывает его одновременно в стандартный вывод и в один или несколько файлов.
     tee запускается из под sudo
