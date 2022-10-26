@@ -21,7 +21,7 @@
     альтернативный вариант 
     vagrant@vagrant:~$ : > /proc/1626/fd/1
 
-    ![Alt text](dev_null.PNG)
+    ![alt text](dev_null.PNG)
     
 ### Задание 4 ###
     Нет, только засоряют список процессов
