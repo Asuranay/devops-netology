@@ -21,7 +21,7 @@
     альтернативный вариант 
     vagrant@vagrant:~$ : > /proc/1626/fd/1
 
-    ![alt text](dev_null.PNG)
+    ![Скриншот консоли](https://github.com/Asuranay/devops-netology/blob/main/dev_null.PNG)
     
 ### Задание 4 ###
     Нет, только засоряют список процессов
