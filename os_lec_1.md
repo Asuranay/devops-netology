@@ -13,7 +13,16 @@
     "/usr/share/misc/magic.mgc"
     плюс пытался открыть /etc/magic.mgc
 ### Задание 3 ###
-    перенаправить поток в > /dev/null/
+    vagrant@vagrant:~$ cat /dev/full >> logfile
+    vagrant@vagrant:~$ rm logfile
+    vagrant@vagrant:~$ lsof -nP +L1 | grep '(deleted)'
+    cat     1626 vagrant    1w   REG  253,0 1839202304     0 1312000 /home/vagrant/logfile (deleted)
+    vagrant@vagrant:~$ cat /dev/null > /proc/1626/fd/1
+    альтернативный вариант 
+    vagrant@vagrant:~$ : > /proc/1626/fd/1
+
+    ![Alt text](dev_null.PNG)
+    
 ### Задание 4 ###
     Нет, только засоряют список процессов
 ### Задание 5 ###
